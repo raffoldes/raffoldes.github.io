@@ -1,5 +1,5 @@
 title: Raffaello Foldes
 description: Raffaello Foldes personal page
 theme: jekyll-theme-minimal
-show_downloads: [false]
-google_analytics: [10012024460]
+show_downloads: false
+google_analytics: 10012024460
