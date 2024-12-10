@@ -13,21 +13,35 @@
     <![endif]-->
     {% include head-custom.html %}
     <style>
-      /* Fixed image at the top-center of the page */
+      /* Layout using CSS Grid */
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr; /* Fixed image row + content row */
+        margin: 0;
+        height: 100vh; /* Ensures grid spans full viewport height */
+      }
+
+      /* Fixed image row */
       .fixed-image {
-        position: fixed;
+        grid-row: 1; /* Place image in the first grid row */
+        position: sticky; /* Sticky positioning to keep it at the top */
         top: 0;
         left: 50%;
-        transform: translateX(-50%); /* Centers the image horizontally */
-        z-index: 1000; /* Ensures it stays on top */
-        max-height: 100px; /* Restricts the height of the image */
-        max-width: 100%; /* Ensures it doesn't overflow */
+        transform: translateX(-50%);
+        z-index: 1000;
+        max-height: 100px;
+        max-width: 100%;
+        margin: 0 auto;
       }
-      body {
-        margin: 0;
-      }
+
+      /* Content section */
       .wrapper {
-        padding-top: 120px; /* Adjust to prevent content overlap */
+        grid-row: 2; /* Place content in the second grid row */
+        padding-top: 20px; /* Optional padding for spacing */
+      }
+
+      header {
+        padding: 20px; /* Ensure content has spacing */
       }
     </style>
   </head>
