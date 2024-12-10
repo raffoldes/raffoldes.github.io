@@ -13,39 +13,28 @@
     <![endif]-->
     {% include head-custom.html %}
     <style>
-    /* Style for the fixed banner */
-  .fixed-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #171717; /* Black background */
-    z-index: 1000; /* Ensures the banner stays on top */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for effect */
-  }
-  .fixed-banner .container {
-    max-width: 800px; /* Match this to your text column's width */
-    margin: 0 auto; /* Center the banner within the viewport */
-    text-align: center; /* Center the content inside the container */
-    padding: 10px 0; /* Add padding for better visuals */
-  }
-  .fixed-banner img {
-    max-height: 100px; /* Restricts the height of the GIF */
-    width: auto; /* Maintain aspect ratio */
-  }
-  body {
-    margin: 0;
-  }
-  .wrapper {
-    margin-top: 120px; /* Avoid content getting hidden under the banner */
-  }
-  </style>
+      /* Fixed image at the top-center of the page */
+      .fixed-image {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%); /* Centers the image horizontally */
+        z-index: 1000; /* Ensures it stays on top */
+        max-height: 100px; /* Restricts the height of the image */
+        max-width: 100%; /* Ensures it doesn't overflow */
+      }
+      body {
+        margin: 0;
+      }
+      .wrapper {
+        margin-top: 120px; /* Adjust to prevent content overlap */
+      }
+    </style>
   </head>
   <body>
-    <!-- Fixed Banner -->
-    <div class="fixed-banner">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Parallax-scroll-example.gif" alt="Banner GIF">
-    </div>
+    <!-- Fixed Image -->
+    <img class="fixed-image" src="https://upload.wikimedia.org/wikipedia/commons/1/16/Parallax-scroll-example.gif" alt="Top Center Image">
+
     <div class="wrapper">
       <header>
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
