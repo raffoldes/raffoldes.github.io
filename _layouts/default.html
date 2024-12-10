@@ -12,8 +12,32 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% include head-custom.html %}
+    <style>
+    /* Style for the fixed banner */
+    .fixed-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000; /* Black background */
+      z-index: 1000; /* Ensures the banner stays on top */
+      text-align: center; /* Center-align the content */
+      padding: 10px 0; /* Add padding for better visuals */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for effect */
+    }
+    .fixed-banner img {
+      max-height: 100px; /* Restricts the height of the GIF */
+    }
+    body {
+      margin-top: 120px; /* Avoid content getting hidden under the banner */
+    }
+  </style>
   </head>
   <body>
+    <!-- Fixed Banner -->
+    <div class="fixed-banner">
+      <img src="your-gif-url.gif" alt="Banner GIF">
+    </div>
     <div class="wrapper">
       <header>
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
